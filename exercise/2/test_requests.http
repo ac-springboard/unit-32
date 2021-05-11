@@ -1,0 +1,52 @@
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{ "name": "mungunza", "price": 2.00 }
+
+<> 2021-05-08T144643.200.json
+
+###
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{ "name": "chiclete", "price": 0.50 }
+
+###
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{ "name": "banana", "price": 0.20 }
+
+###
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{ "name": "abacaxi", "price": 1.50 }
+
+###
+GET http://localhost:3000/items
+Accept: application/json
+
+<> 2021-05-08T144938.200.json
+
+###
+GET http://localhost:3000/items/mungunza
+Accept: application/json
+
+###
+GET http://localhost:3000/items/mungunzao
+Accept: application/json
+
+###
+PATCH http://localhost:3000/items/mungunza
+Content-Type: application/json
+
+{ "name": "mungunza", "price": 2.22 }
+
+###
+GET http://localhost:3000/itemss
+Accept: application/json
+
+###
+
+<Q coisa....>

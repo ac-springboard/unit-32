@@ -1,27 +1,19 @@
 'use strict';
 
-const {errors}       = require('./error-list');
-const {ErrorHandler} = require('./error-handler');
+const {errors}       = require('./error-list')
+const {ErrorHandler} = require('./error-handler')
 
 class Middleware {
 
-  static throw404Error(req, res, next){
-    console.log(req.statusCode, res.statusCode);
-    return next();
+  static throw404Error(next) {
+      throw new ErrorHandler(errors['404'])
   }
 
-  /*static validateQuery(query) {
-    if ( !query.nums) {
-      throw new ErrorHandler(errors.empty_list);
+  static check404Error(ref, next){
+    if ( ref === null || ref === undefined || ref === -1 ){
+      Middleware.throw404Error(next)
     }
-
-    const arr = query.nums.split(',');
-    arr.map(item => {
-      if ( !Number(item)) {
-        throw new ErrorHandler(errors.invalid_number);
-      }
-    });
-  }*/
+  }
 
 }
 
